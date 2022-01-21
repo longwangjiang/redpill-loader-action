@@ -24,9 +24,10 @@ make LINUX_SRC=../apollolake/usr/local/x86_64-pc-linux-gnu/x86_64-pc-linux-gnu/s
 read -a KVERS <<< "$(sudo modinfo --field=vermagic redpill.ko)" && cp -fv redpill.ko ../redpill-load/ext/rp-lkm/redpill-linux-v${KVERS[0]}.ko || exit 1
 cd ..
 
-# build redpill-load
+# build redpill-load（30行是增加关机键驱动命令，如需增加驱动按此格式）
 cd redpill-load
 cp ${root}/user_config.DS918+.json ./user_config.json
+./ext-manager.sh add https://raw.githubusercontent.com/jumkey/redpill-load/develop/redpill-acpid/rpext-index.json
 sudo ./build-loader.sh 'DS918+' '7.0.1-42218'
 mv images/redpill-DS918+_7.0.1-4221*.img ${root}/output/
 cd ${root}
