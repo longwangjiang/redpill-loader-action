@@ -5,12 +5,11 @@
     "sn": "125XXXX",
     "netif_num":"2",
     "mac1": "0011XXXX",
-    "mac2": "0011XXXX"
-    },
-    "synoinfo": {
-    "maxdisks" : "16",
-    "internalportcfg" : "0x3fffff",
-    "esataportcfg" : "0x0"
+    "mac2": "0011XXXX",
+    "SataPortMap": "24",
+    "DiskIdxMap": "0400",
+    "SataPortMap": "1",
+    "SasIdxMap": "0"
     },
     "ramdisk_copy": {},
     "extensions": []
